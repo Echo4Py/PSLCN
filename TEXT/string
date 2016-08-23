@@ -1,0 +1,52 @@
+<html>
+<title>Text</title>
+<body>
+<fieldset id="1.1">
+<legend>字符串</legend>
+<h1>
+字符串常量和模板
+</h1>
+<h2>
+目的：用文本来包含常量和类来进行工作
+</h2>
+<h3>Python版本1.4以上</h3>
+<p>
+string模块追溯到python的最早版本。在2.0版本中，很多先前部署在模块中的函数被移到str方法和unicode对象。那些函数的旧版本仍然可用，但并不赞成使用它们并且在python3.0里它们都被丢弃了。string模块保留一些有用的常量和类来工作那就是使用string和unicode对象，而且这个讨论将集中到它俩身上。
+</p>
+</fieldset>
+<fieldset id="1.1.1">
+<legend>函数</legend>
+<p>
+2个函数capwords()和maketrans()没有从string模块移走。capwords()把一个字符串里的所有首字母都变成大写。
+<textarea raws=8 cols=60>
+import string
+s = 'The quick brown fox jumped over the lazy dog.'
+
+print s
+print string.capwords(s)
+</textarea>
+</p>
+<p>
+结果就像调用split()，在结果列表里首字母全部大写，并且调用join()来合并结果。
+</p>
+<p>
+maketrans()函数建立了翻译表格，用translate()方法把一组字符变成另外一组，这比重复调用replace()更有效率。
+</p>
+<textarea raws=8 cols=60>
+import string
+
+leet = string.maketrans('abegiloprstz', '463611092572')
+s = 'The quick brown fox jumped over the lazy dog.'
+
+print s
+print s.translate(leet)
+</textarea>
+</fieldset>
+<fieldset id="1.1.2">
+<legend>模板</legend>
+<p>
+
+</p>
+</fieldset>
+</body>
+</html>
