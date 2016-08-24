@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from jinja2 import Template
 import time
 from filecmp import cmp
-import commands
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,9 +24,11 @@ def fs():
     
 def monitor_size():
     from filecmp import cmp
+    #import commands
     result1 = cmp('FILESYSTEM/filesystem', 'templates/filesystem')
     if result1 == bool(0):
-        commands.getoutput('python main.py runserver')
+        app.run()
+        #commands.getoutput('python main.py runserver')
 
 def dur(op=None, clock=[time.time()]):
     if op != None:
